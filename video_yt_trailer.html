@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html class="fullscreen_page sticky_menu">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" href="img/favico.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="img/apple_icons_57x57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple_icons_72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple_icons_114x114.png">
+<title>Kyle Duesing</title>
+<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,300,500,900" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/theme.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" media="all" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+</head>
+<body>
+	<header class="main_header">
+		<div class="header_wrapper">
+			<div class="logo_sect">
+				<a href="index.html" class="logo"><img src="img/blacklogo.jpg" alt=""  class="logo_def"><img src="img/retina/logo.png" alt="" class="logo_retina"></a>
+				<div class="slogan">Photography & Videography</div>
+			</div>
+			<div class="header_rp">
+				<nav>
+					<div class="menu-main-menu-container">
+						<ul id="menu-main-menu" class="menu">
+							<li class="current-menu-parent">
+								<a href="index.html"><span>Home</span></a>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#"><span>Photos</span></a>
+								<ul class="sub-menu">
+									<li><a href="real_estate_gallery.html"><span>Real Estate</span></a></li>
+									<li><a href="cars_gallery.html"><span>Cars</span></a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#"><span>Videos</span></a>
+								<ul class="sub-menu">
+									<li><a href="video_yt_cinematic.html"><span>Cinematography</span></a></li>
+									<li><a href="video_yt_trailer.html"><span>Channel Trailer</span></a></li>
+									<li><a href="https://www.youtube.com/user/KyleGT08/videos" target="_blank"><span>More Videos</span></a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="contact.html"><span>Contact</span></a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</header>
+    
+    <div class="fullscreen_block fw_background bg_video">
+        <iframe width="1920" height="1080" src="https://www.youtube.com/embed/1sv0Cz8c5W8?autoplay=1&vq=hd1080" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+
+	<div class="content_bg"></div>
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+    <script type="text/javascript" src="js/modules.js"></script>
+	<script type="text/javascript" src="js/theme.js"></script>
+    <script>
+		jQuery(document).ready(function() {
+			"use strict";
+			jQuery('.fw_background').height(jQuery(window).height());			
+			jQuery('.main_header').removeClass('hided');
+			jQuery('.fullscreen_block').addClass('loaded');
+			if (jQuery(window).width() > 1024) {
+				if (jQuery('.bg_video').size() > 0) {
+					if (((jQuery(window).height()+150)/9)*16 > jQuery(window).width()) {				
+						jQuery('iframe').height(jQuery(window).height()+150).width(((jQuery(window).height()+150)/9)*16);
+						jQuery('iframe').css({'margin-left' : (-1*jQuery('iframe').width()/2)+'px', 'top' : "-75px", 'margin-top' : '0px'});
+					} else {
+						jQuery('iframe').width(jQuery(window).width()).height(((jQuery(window).width())/16)*9);
+						jQuery('iframe').css({'margin-left' : (-1*jQuery('iframe').width()/2)+'px', 'margin-top' : (-1*jQuery('iframe').height()/2)+'px', 'top' : '50%'});
+					}
+				}
+			} else if (jQuery(window).width() < 760) {
+				jQuery('.bg_video').height(jQuery(window).height()-jQuery('.main_header').height());
+				jQuery('iframe').height(jQuery(window).height()-jQuery('.main_header').height());
+			} else {
+				jQuery('.bg_video').height(jQuery(window).height() - jQuery('.main_header').height());
+				jQuery('.bg_video').css({'margin-top': jQuery('.main_header').height()+'px'});
+				jQuery('iframe').height(jQuery(window).height() - jQuery('.main_header').height());				
+			}
+			jQuery('html').addClass('without_border');
+		});
+		jQuery(window).resize(function() {
+			"use strict";
+			jQuery('.fw_background').height(jQuery(window).height());
+			if (jQuery(window).width() > 1024	) {
+				if (jQuery('.bg_video').size() > 0) {
+					if (((jQuery(window).height()+150)/9)*16 > jQuery(window).width()) {
+						jQuery('iframe').height(jQuery(window).height()+150).width(((jQuery(window).height()+150)/9)*16);
+						jQuery('iframe').css({'margin-left' : (-1*jQuery('iframe').width()/2)+'px', 'top' : "-75px", 'margin-top' : '0px'});
+					} else {
+						jQuery('iframe').width(jQuery(window).width()).height(((jQuery(window).width())/16)*9);
+						jQuery('iframe').css({'margin-left' : (-1*jQuery('iframe').width()/2)+'px', 'margin-top' : (-1*jQuery('iframe').height()/2)+'px', 'top' : '50%'});
+					}
+				}
+			} else if (jQuery(window).width() < 760) {
+				jQuery('.bg_video').height(jQuery(window).height()-jQuery('.main_header').height());
+				jQuery('iframe').height(jQuery(window).height()-jQuery('.main_header').height());
+			} else {
+				jQuery('.bg_video').height(jQuery(window).height() - jQuery('.main_header').height());
+				jQuery('.bg_video').css({'margin-top': jQuery('.main_header').height()+'px'});
+				jQuery('iframe').height(jQuery(window).height() - jQuery('.main_header').height());				
+			}
+		});		
+	</script>
+</body>
+</html>
