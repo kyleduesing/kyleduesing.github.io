@@ -34,6 +34,7 @@
 								<ul class="sub-menu">
 									<li><a href="real_estate_gallery.html"><span>Real Estate</span></a></li>
 									<li><a href="cars_gallery.html"><span>Cars</span></a></li>
+									<li><a href="photoshop_gallery.html"><span>Photoshop</span></a></li>
 								</ul>
 							</li>
 							<li class="menu-item-has-children">
@@ -54,24 +55,24 @@
 			<div class="clear"></div>
 		</div>
 	</header>
-    
+
     <div class="fullscreen_block fw_background bg_video">
         <iframe width="1920" height="1080" src="https://www.youtube.com/embed/LUUxOjIr8vI?autoplay=1&vq=hd1080" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
     </div>
-       
+
 	<div class="content_bg"></div>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>    
+	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/modules.js"></script>
 	<script type="text/javascript" src="js/theme.js"></script>
     <script>
 		jQuery(document).ready(function() {
 			"use strict";
-			jQuery('.fw_background').height(jQuery(window).height());			
+			jQuery('.fw_background').height(jQuery(window).height());
 			jQuery('.main_header').removeClass('hided');
 			jQuery('.fullscreen_block').addClass('loaded');
 			if (jQuery(window).width() > 1024) {
 				if (jQuery('.bg_video').size() > 0) {
-					if (((jQuery(window).height()+150)/9)*16 > jQuery(window).width()) {				
+					if (((jQuery(window).height()+150)/9)*16 > jQuery(window).width()) {
 						jQuery('iframe').height(jQuery(window).height()+150).width(((jQuery(window).height()+150)/9)*16);
 						jQuery('iframe').css({'margin-left' : (-1*jQuery('iframe').width()/2)+'px', 'top' : "-75px", 'margin-top' : '0px'});
 					} else {
@@ -85,7 +86,7 @@
 			} else {
 				jQuery('.bg_video').height(jQuery(window).height() - jQuery('.main_header').height());
 				jQuery('.bg_video').css({'margin-top': jQuery('.main_header').height()+'px'});
-				jQuery('iframe').height(jQuery(window).height() - jQuery('.main_header').height());				
+				jQuery('iframe').height(jQuery(window).height() - jQuery('.main_header').height());
 			}
 			jQuery('html').addClass('without_border');
 		});
@@ -108,9 +109,9 @@
 			} else {
 				jQuery('.bg_video').height(jQuery(window).height() - jQuery('.main_header').height());
 				jQuery('.bg_video').css({'margin-top': jQuery('.main_header').height()+'px'});
-				jQuery('iframe').height(jQuery(window).height() - jQuery('.main_header').height());				
+				jQuery('iframe').height(jQuery(window).height() - jQuery('.main_header').height());
 			}
-		});		
+		});
 	</script>
 </body>
 </html>
