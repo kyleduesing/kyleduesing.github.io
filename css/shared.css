@@ -4261,3 +4261,10 @@ a,
 .ca-caption-gmr0D2 {
   color: var(--primary-paragraphs);
 }
+
+.slide__title.display-heading.ca-slide-title-glRdeB {
+  cursor: pointer;
+}
+.slide__subtitle.display-subtitle.ca-slide-subtitle-g3K1Vg {
+  cursor: pointer;
+}

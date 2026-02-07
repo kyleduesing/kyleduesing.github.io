@@ -158,7 +158,7 @@
                                 </div>
                                 <div class="tint absolute-fill js-tint"></div>
                               </div>
-                              <div class="slide__content">
+                              <div id="start" class="slide__content">
                                 <h1 class="slide__title display-heading ca-slide-title-glRdeB">
                                   <span class="spanify">Start</span>
                                   <span class="spanify">the</span>
@@ -186,7 +186,7 @@
           class="block-container block-contact-form-with-text page-block block-container--flushed-top block-container--flushed-bottom block-container--flushed-left block-container--flushed-right ca-background-2ro8DB"
           id="block-container-kkbGy7"
         >
-          <div class="block-container__block">
+          <div id="form-start" class="block-container__block">
             <div class="pos-rel contact-form-with-text__wrapper fixed-size-contact-form-wrapper__parent contact-form-with-text__wrapper--a row align-items-start fixed-size-contact-form-wrapper__parent--c">
               <div class="d-md-flex contact-form-with-text__text-container--bg absolute-fill ca-card-BZRd8B"></div>
               <div class="pos-rel contact-form-with-text__text-container col-12 col-md-4">
@@ -218,12 +218,30 @@
                               </div>
                             </div>
                           </div>
-                          <div class="element-container clearfix element-contact-form-field" id="element-container-GvlZav">
+                          <div class="element-container clearfix element-contact-form-field" id="element-container-woeuir">
                             <div class="element-container__element">
                               <div class="form-group">
-                                <label class="contact-form-field__input-label ca-input-label-g3KObg" for="email-address-GvlZav">Email address <span class="contact-form-field__asterisk">*</span> </label>
-                                <h6 class="contact-form-field__error-message hidden ca-error-glRVeB" id="error-GvlZav"></h6>
-                                <input id="from-email" class="form-control contact-form-field__input ca-input-text-26x0lN ca-input-border-g7OlOg" type="text" id="email-address-GvlZav" name="GvlZav" placeholder maxlength="64" />
+                                <label class="contact-form-field__input-label ca-input-label-g3KObg" for="phone-number-woeuir">Phone <span class="contact-form-field__asterisk">*</span> </label>
+                                <h6 class="contact-form-field__error-message hidden ca-error-glRVeB" id="error-woeuir"></h6>
+                                <input id="phone-number" class="form-control contact-form-field__input ca-input-text-26x0lN ca-input-border-g7OlOg" type="text" id="phone-number-woeuir" name="woeuir" placeholder maxlength="64" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="element-container clearfix element-contact-form-field" id="element-container-qwqwdqwe">
+                            <div class="element-container__element">
+                              <div class="form-group">
+                                <label class="contact-form-field__input-label ca-input-label-g3KObg" for="email-address-qwqwdqwe">Email address <span class="contact-form-field__asterisk">*</span> </label>
+                                <h6 class="contact-form-field__error-message hidden ca-error-glRVeB" id="error-qwqwdqwe"></h6>
+                                <input id="from-email" class="form-control contact-form-field__input ca-input-text-26x0lN ca-input-border-g7OlOg" type="text" id="email-address-qwqwdqwe" name="qwqwdqwe" placeholder maxlength="64" />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="element-container clearfix element-contact-form-field" id="element-container-seofj">
+                            <div class="element-container__element">
+                              <div class="form-group">
+                                <label class="contact-form-field__input-label ca-input-label-g3KObg" for="phone-number-seofj">Budget <span class="contact-form-field__asterisk">*</span> </label>
+                                <h6 class="contact-form-field__error-message hidden ca-error-glRVeB" id="error-seofj"></h6>
+                                <input id="budget" class="form-control contact-form-field__input ca-input-text-26x0lN ca-input-border-g7OlOg" type="text" id="budget-seofj" name="seofj" placeholder maxlength="64" />
                               </div>
                             </div>
                           </div>
@@ -419,7 +437,7 @@
               </div>
               <div class="footer__row--bottom">
                 <div class="footer__copyright">
-                  <p class="copyright-text paragraph-3 ca-footer-text-gaKA1B">All content Copyright © 2024 KRD Productions</p>
+                  <p class="copyright-text paragraph-3 ca-footer-text-gaKA1B">All content Copyright © 2026 KRD Productions</p>
                 </div>
                 <div class="social-bar">
                   <a class="social-link ca-social-icons-2YLAAg ca-social-icons-hover-NVKzyg" href="https://www.youtube.com/@KyleSVT" target="_blank">
@@ -1067,13 +1085,27 @@
       })();
     </script>
     <script>
+      const contactMeSection = document.getElementById("start");
+      const element = document.getElementById("form-start");
+      contactMeSection.addEventListener("click", (event) => {
+        element.scrollIntoView();
+      })
       const sendMessageButton = document.getElementById("send-message");
       sendMessageButton.addEventListener("click", (event) => {
         event.preventDefault();
-        var notyf = new Notyf();
+        var notyf = new Notyf({
+          duration: 10000,
+          dismissible: true,
+          position: {
+            x: "center",
+            y: "center"
+          }
+        });
 
         const fromName = document.getElementById("from-name").value;
         const fromEmail = document.getElementById("from-email").value;
+        const phoneNumber = document.getElementById("phone-number").value;
+        const budget = document.getElementById("budget").value;
         const message = document.getElementById("message").value;
 
         if (fromName && fromEmail && message) {
@@ -1082,6 +1114,8 @@
             fromName,
             fromEmail,
             message,
+            budget,
+            phoneNumber
           };
           emailjs.send("service_z45e5xr", "template_cqhrr6t", templateParams).then(
             function (response) {
